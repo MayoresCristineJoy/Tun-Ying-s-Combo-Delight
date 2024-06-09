@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tun Ying's Combo Delight</title>
+    <link rel="icon" href="../images/Logo.png">
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .drop-down {
+            display: none;
+        }
+        .drop-down.show {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white">
+  <!-- Navigation -->
+  <nav class="flex items-center relative justify-between bg-white px-5 py-6 w-full z-50">
+    <div class="flex items-center">
+        <img src="../images/Logo.png" class="w-20 h-39" alt="Logo">
+        <ul id="drawer" role="menu" class="sm:gap-5 hidden md:flex transition-left ease-[cubic-bezier(0.4, 0.0, 0.2, 1)] delay-150 sm:flex flex flex-col cursor-pointer absolute min-h-screen -left-48 sm:static w-48 top-0 bg-white sm:shadow-none shadow-xl sm:bg-transparent sm:flex-row sm:w-auto sm:min-h-0 ml-6">
+          <div class="sm:hidden p-6 mb-5 flex items-center justify-center">
+              <img src="../images/Logo.png" class="w-20 h-39" alt="Logo">
+          </div>
+          <li class="font-medium text-md p-3 cursor-pointer hover:bg-slate-300 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
+              <a href="../index.html">Home</a>
+          </li>
+          <li class="font-medium text-md p-3 cursor-pointer hover:bg-slate-300 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
+              <a href="shop.html">Shop</a>
+          </li>
+          <li class="font-medium text-md p-3 cursor-pointer hover:bg-slate-300 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
+              <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+    </div>
+    <div class="flex gap-6 items-center">
+        <button id="bagIcon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9303 7C16.9621 6.92913 16.977 6.85189 16.9739 6.77432H17C16.8882 4.10591 14.6849 2 12.0049 2C9.325 2 7.12172 4.10591 7.00989 6.77432C6.9967 6.84898 6.9967 6.92535 7.00989 7H6.93171C5.65022 7 4.28034 7.84597 3.88264 10.1201L3.1049 16.3147C2.46858 20.8629 4.81062 22 7.86853 22H16.1585C19.2075 22 21.4789 20.3535 20.9133 16.3147L20.1444 10.1201C19.676 7.90964 18.3503 7 17.0865 7H16.9303ZM15.4932 7C15.4654 6.92794 15.4506 6.85153 15.4497 6.77432C15.4497 4.85682 13.8899 3.30238 11.9657 3.30238C10.0416 3.30238 8.48184 4.85682 8.48184 6.77432C8.49502 6.84898 8.49502 6.92535 8.48184 7H15.4932ZM9.097 12.1486C8.60889 12.1486 8.21321 11.7413 8.21321 11.2389C8.21321 10.7366 8.60889 10.3293 9.097 10.3293C9.5851 10.3293 9.98079 10.7366 9.98079 11.2389C9.98079 11.7413 9.5851 12.1486 9.097 12.1486ZM14.002 11.2389C14.002 11.7413 14.3977 12.1486 14.8858 12.1486C15.3739 12.1486 15.7696 11.7413 15.7696 11.2389C15.7696 10.7366 15.3739 10.3293 14.8858 10.3293C14.3977 10.3293 14.002 10.7366 14.002 11.2389Z" fill="#200E32"/>
+          </svg>
+        </button>
+        <div class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('../images/Profile.png')]" id="profile-picture">
+            <div class="drop-down w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3" id="dropdown-menu">
+              <a href="#" class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </span>
+                <span>Profile</span>
+              </a>
+              <a href="#" class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                  <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      </svg>
+                  </span>
+                  <span>Settings</span>
+              </a>
+              <a href="#" class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                  <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                      </svg>
+                  </span>
+                  <span>Notifications</span>
+              </a>
+              <button id="openTerms" class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                    </svg>                              
+                </span>
+                <span>Terms & Condition</span>
+            </button> 
+              <a href="#" class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                  <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                      </svg>
+                  </span>
+                  <span>Logout</span>
+              </a>
+            </div>
+        </div>
+        <button id="mobileToggle" type="button" class="sm:hidden cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+          <!-- My Bag -->
+        <div class="relative z-10 hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" id="bagPanel">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+      
+          <div class="fixed inset-0 overflow-hidden">
+              <div class="absolute inset-0 overflow-hidden">
+                  <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                      <div class="pointer-events-auto w-screen max-w-md">
+                          <div class="flex h-full flex-col bg-white shadow-xl">
+                              <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                                  <div class="flex items-start justify-between">
+                                  <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">My Bag</h2>
+                                  <div class="ml-3 flex h-7 items-center">
+                                      <button id="closeBagPanel" type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                      <span class="absolute -inset-0.5"></span>
+                                      <span class="sr-only">Close panel</span>
+                                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                      </svg>
+                                      </button>
+                                  </div>
+                                  </div>
+                  
+                                  <div class="mt-8">
+                                  <div class="flow-root">
+                                      <ul role="list" class="-my-6 divide-y divide-gray-200">
+                                      <li class="flex py-6">
+                                          <div class="h-24 w-29 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                          <img src="../images/Spicy Tubtim Fish.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
+                                          </div>
+                  
+                                          <div class="ml-4 flex flex-1 flex-col">
+                                          <div>
+                                              <div class="flex justify-between text-base font-medium text-gray-900">
+                                              <h3>
+                                                  <a href="#">Spicy Tubtim Fish</a>
+                                              </h3>
+                                              <p class="ml-4">₱99.99</p>
+                                              </div>
+                                          </div>
+                                          <div class="flex flex-1 items-end justify-between text-sm">
+                                              <p class="text-gray-500">Qty 1</p>
+                  
+                                              <div class="flex">
+                                              <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                              </div>
+                                          </div>
+                                          </div>
+                                      </li>
+                                      <li class="flex py-6">
+                                          <div class="h-24 w-29 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                          <img src="../images/Fried Chicken Pop.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="h-full w-full object-cover object-center">
+                                          </div>
+                  
+                                          <div class="ml-4 flex flex-1 flex-col">
+                                          <div>
+                                              <div class="flex justify-between text-base font-medium text-gray-900">
+                                              <h3>
+                                                  <a href="#">Fried Chicken Pop</a>
+                                              </h3>
+                                              <p class="ml-4">₱99.99</p>
+                                              </div>
+                                          </div>
+                                          <div class="flex flex-1 items-end justify-between text-sm">
+                                              <p class="text-gray-500">Qty 1</p>
+                  
+                                              <div class="flex">
+                                              <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                              </div>
+                                          </div>
+                                          </div>
+                                      </li>
+                                      <li class="flex py-6">
+                                          <div class="h-24 w-29 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                          <img src="../images/Fried Chicken wieh Cashew Nuts.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="h-full w-full object-cover object-center">
+                                          </div>
+                  
+                                          <div class="ml-4 flex flex-1 flex-col">
+                                          <div>
+                                              <div class="flex justify-between text-base font-medium text-gray-900">
+                                              <h3>
+                                                  <a href="#">Cashew Chicken</a>
+                                              </h3>
+                                              <p class="ml-4">₱99.99</p>
+                                              </div>
+                                          </div>
+                                          <div class="flex flex-1 items-end justify-between text-sm">
+                                              <p class="text-gray-500">Qty 1</p>
+                  
+                                              <div class="flex">
+                                              <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                              </div>
+                                          </div>
+                                          </div>
+                                      </li>
+                                      <li class="flex py-6">
+                                          <div class="h-24 w-29 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                          <img src="../images/Rendang Pork.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="h-full w-full object-cover object-center">
+                                          </div>
+                  
+                                          <div class="ml-4 flex flex-1 flex-col">
+                                          <div>
+                                              <div class="flex justify-between text-base font-medium text-gray-900">
+                                              <h3>
+                                                  <a href="#">Rendang Pork</a>
+                                              </h3>
+                                              <p class="ml-4">₱99.99</p>
+                                              </div>
+                                          </div>
+                                          <div class="flex flex-1 items-end justify-between text-sm">
+                                              <p class="text-gray-500">Qty 1</p>
+                  
+                                              <div class="flex">
+                                              <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                              </div>
+                                          </div>
+                                          </div>
+                                      </li>
+                                      </ul>
+                                  </div>
+                                  </div>
+                              </div>
+                  
+                              <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
+                                  <div class="flex justify-between text-base font-medium text-gray-900">
+                                  <p>Subtotal</p>
+                                  <p>₱399.96</p>
+                                  </div>
+                                  <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                  <div class="mt-6">
+                                  <a href="checkout.html" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                                  </div>
+                                  <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                      <p>
+                                          or
+                                          <button id="closeBagPanel1" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">
+                                              Continue Shopping
+                                          </button>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Terms & Condition -->
+  <div class="hidden font-sans bg-gray-100 items-center justify-center h-screen absolute" id="termsPanel">
+    <div x-show="showPrivacyPolicy" class="fixed z-50 inset-0 flex items-center justify-center">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        <div class="relative bg-white rounded-lg overflow-hidden shadow-xl max-w-screen-md w-full m-4" x-transition:enter="transition ease-out duration-300 transform opacity-0 scale-95" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform opacity-100 scale-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" x-cloak>
+        <!-- Modal panel -->
+        <div class="px-6 py-4">
+            <h3 class="text-lg leading-6 font-medium text-gray-900"> Terms & Condition </h3>
+        </div>
+        <div class="prose max-w-screen-md p-6 overflow-y-auto" style="max-height: 70vh; background-color: #fff; border: 1px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);">
+            <h2 class="text-2xl font-bold mb-4">Terms & Condition</h2>
+            <p class="mb-4">Welcome to Tun Ying's Combo Delight! We are committed to maintaining the accuracy, confidentiality, and security of your personal information. As part of this commitment, our privacy policy governs our actions regarding the collection, use, and disclosure of your personal information. Our privacy policy is based on the principles set forth by applicable laws to ensure the protection of your information. 
+                By accessing or using our platform, you agree to comply with these terms and conditions. If you do not agree with any part of these terms, you may not access or use our services.</p>
+            <h3 class="text-lg font-semibold mb-2">Introduction</h3>
+            <p class="mb-4">Tun Ying's Combo Delight is responsible for maintaining and protecting the personal information of our users that is under our control. We have an individual who is responsible for ensuring compliance with our privacy policy. This individual oversees our privacy practices, ensuring that your personal information is handled with the utmost care and in accordance with all applicable laws and regulations. All content and 
+                materials available on our platform, including but not limited to text, graphics, logos, images, and software, are the property of our platform or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+            <h3 class="text-lg font-semibold mb-2">Identifying Purposes</h3>
+            <p class="mb-4">The purpose of this is that we collect, use, and disclose the personal information of our users to provide the offers they want and to offer additional products and services that may interest them. The purposes for collecting personal information will be identified before or at the time of collection. In certain situations, the reasons for collecting information may be clear, and consent can be implied, such as when you
+                provide your name, address, and payment details during the order process.</p>
+            <h3 class="text-lg font-semibold mb-2">Consent</h3>
+            <p class="mb-4">We respect your privacy and are committed to protecting your personal information. Our Privacy Policy explains how we collect, use, and disclose information about you. By using our services, you consent to the collection, use, and disclosure of your information as described in our Privacy Policy. Consent are necessary for the collection, use, or disclosure of our user’s personal information, except where required or permitted 
+                by law. Giving your personal information is always your choice. However, if you choose not to provide certain information, it may limit our ability to offer you our services. We will not require you to consent to the collection, use, or disclosure of your information as a condition for providing a product or service, except when it is essential to deliver the product that you wanted.</p>
+            <h3 class="text-lg font-semibold mb-2">Limiting Collection</h3>
+            <p class="mb-4">The personal information we collected will be limited to the details necessary for the purposes we have identified. With your consent, we may collect personal information from you in person, over the telephone, or through correspondence via mail, online, or the Internet.</p>
+            <h3 class="text-lg font-semibold mb-2">Limiting Use, Disclosure and Retention</h3>
+            <p class="mb-4">The personal information you\'ve provided may only be used or disclosed for the purpose for which it was collected unless you have otherwise consented or when it is required or permitted by law. Personal information will only be retained for the period necessary to fulfill the purpose for which it was collected.</p>
+            <p class="mb-2">If applicable, we may share personal information with certain third parties who assist us in providing our services, such as the payment processors, our delivery services, and our marketing partners. These parties are bound by strict confidentiality agreements and are prohibited from using our user’s personal information for any purpose other than assisting us.</p>
+            <p class="mt-4">
+            <a href="" class="text-blue-500 hover:underline">Read our full Privacy Policy</a>.
+            </p>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 sm:px-6 flex align-items justify-end p-4 gap-4 flex-row">
+            <button id="closeTerms" type="button" class="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400  sm:w-auto sm:text-sm"> Accept </button>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="hidden w-full" id="navbar-default">
+    <ul class="font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+        <li>
+            <a href="../index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" aria-current="page">Home</a>
+        </li>
+        <li>
+            <a href="shop.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100">Shop</a>
+        </li>
+        <li>
+            <a href="contact.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100">Contact</a>
+        </li>
+    </ul>
+  </div>
+
+  <div class="font-[sans-serif] bg-white p-8 lg:max-w-7xl max-w-xl mx-auto">
+    <div class="grid lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2 max-lg:order-1">
+        <div class="flex items-start">
+          <div class="w-full">
+            <div class="flex items-center w-full">
+              <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-800 p-1.5 flex items-center justify-center rounded-full">
+                <span class="text-sm text-white font-bold">1</span>
+              </div>
+              <div class="w-full h-[3px] mx-4 rounded-lg bg-gray-800"></div>
+            </div>
+            <div class="mt-2 mr-4">
+              <h6 class="text-sm font-bold text-gray-800">Shipping</h6>
+            </div>
+          </div>
+
+          <div class="w-full">
+            <div class="flex items-center w-full">
+              <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-800 p-1.5 flex items-center justify-center rounded-full">
+                <span class="text-sm text-white font-bold">2</span>
+              </div>
+              <div class="w-full h-[3px] mx-4 rounded-lg bg-gray-300"></div>
+            </div>
+            <div class="mt-2 mr-4">
+              <h6 class="text-sm font-bold text-gray-800">Billing</h6>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center">
+              <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-200 p-1.5 flex items-center justify-center rounded-full">
+                <span class="text-sm text-white font-bold">3</span>
+              </div>
+            </div>
+            <div class="mt-2">
+              <h6 class="text-sm font-bold text-gray-300">Confirm</h6>
+            </div>
+          </div>
+        </div>
+
+        <form class="mt-16 max-w-lg">
+          <h2 class="text-2xl font-extrabold text-gray-800">Payment method</h2>
+
+          <div class="grid gap-5 sm:grid-cols-3 mt-8">
+            <div class="flex items-center">
+              <input type="radio" class="w-5 h-5 cursor-pointer" id="card" checked />
+              <label for="card" class="ml-4 flex gap-2 cursor-pointer">
+                <img src="../images/Card1.png" class="w-12" alt="card1" />
+                <img src="../images/Card2.png" class="w-12" alt="card2" />
+              </label>
+            </div>
+
+            <div class="flex items-center">
+              <input type="radio" class="w-5 h-5 cursor-pointer" id="paypal" />
+              <label for="paypal" class="ml-4 flex gap-2 cursor-pointer">
+                <img src="../images/Paypal.png" class="w-20" alt="paypalCard" />
+              </label>
+            </div>
+
+            <div class="flex items-center">
+                <input type="radio" class="w-5 h-5 cursor-pointer" id="gcash" />
+                <label for="gcash" class="ml-4 flex gap-2 cursor-pointer">
+                  <img src="../images/GCash.png" class="w-20" alt="gcashCard" />
+                </label>
+            </div>
+          </div>
+
+          <div class="grid gap-4 mt-8">
+            <input type="text" placeholder="Cardholder's Name"
+              class="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none" />
+
+            <div class="flex bg-white border-b-2 focus-within:border-gray-800 overflow-hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-12 ml-3" viewBox="0 0 291.764 291.764">
+                <path fill="#2394bc" d="m119.259 100.23-14.643 91.122h23.405l14.634-91.122h-23.396zm70.598 37.118c-8.179-4.039-13.193-6.765-13.193-10.896.1-3.756 4.24-7.604 13.485-7.604 7.604-.191 13.193 1.596 17.433 3.374l2.124.948 3.182-19.065c-4.623-1.787-11.953-3.756-21.007-3.756-23.113 0-39.388 12.017-39.489 29.204-.191 12.683 11.652 19.721 20.515 23.943 9.054 4.331 12.136 7.139 12.136 10.987-.1 5.908-7.321 8.634-14.059 8.634-9.336 0-14.351-1.404-21.964-4.696l-3.082-1.404-3.273 19.813c5.498 2.444 15.609 4.595 26.104 4.705 24.563 0 40.546-11.835 40.747-30.152.08-10.048-6.165-17.744-19.659-24.035zm83.034-36.836h-18.108c-5.58 0-9.82 1.605-12.236 7.331l-34.766 83.509h24.563l6.765-18.08h27.481l3.51 18.153h21.664l-18.873-90.913zm-26.97 54.514c.474.046 9.428-29.514 9.428-29.514l7.13 29.514h-16.558zM85.059 100.23l-22.931 61.909-2.498-12.209c-4.24-14.087-17.533-29.395-32.368-36.999l20.998 78.33h24.764l36.799-91.021H85.059v-.01z" data-original="#2394bc" />
+                <path fill="#efc75e" d="M51.916 111.982c-1.787-6.948-7.486-11.634-15.226-11.734H.374L0 101.934c28.329 6.984 52.107 28.474 59.821 48.688l-7.905-38.64z" data-original="#efc75e" />
+              </svg>
+              <input type="number" placeholder="Card Number"
+                class="px-4 py-3.5 bg-white text-gray-800 w-full text-sm outline-none" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <input type="number" placeholder="EXP."
+                class="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none" />
+              <input type="number" placeholder="CVV"
+                class="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none" />
+            </div>
+
+            <div class="flex items-center">
+              <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+              <label for="remember-me" class="ml-3 block text-sm">
+                I accept the <a href="" class="text-blue-600 font-semibold hover:underline ml-1">Terms and Conditions</a>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4 mt-8">
+            <button type="button" class="min-w-[150px] px-6 py-3.5 text-sm bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200">Back</button>
+            <button type="button" class="min-w-[150px] px-6 py-3.5 text-sm bg-gray-800 text-white rounded-md hover:bg-[#111]">Pay ₱399.96</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-md">
+        <h2 class="text-4xl font-bold text-gray-800">₱399.96</h2>
+
+        <ul class="text-gray-800 mt-8 space-y-4">
+          <li class="flex flex-wrap gap-4 text-sm">Spicy Tubtim Fish <span class="ml-auto font-bold">₱99.99</span></li>
+          <li class="flex flex-wrap gap-4 text-sm">Fried Chicken Pop <span class="ml-auto font-bold">₱99.99</span></li>
+          <li class="flex flex-wrap gap-4 text-sm">Cashew Chicken <span class="ml-auto font-bold">₱99.99</span></li>
+          <li class="flex flex-wrap gap-4 text-sm">Rendang Pork <span class="ml-auto font-bold">₱99.99</span></li>
+          <li class="flex flex-wrap gap-4 text-sm font-bold border-t-2 pt-4">Total <span class="ml-auto">₱399.96</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+  <script src="../javascript/index.js"></script>
+</body>
+</html>
